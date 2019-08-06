@@ -1,17 +1,23 @@
 <template>
     <div id="app">
+        <!-- 헤더 -->
         <Header></Header>
-        <router-view />
+        <!-- 메인페이지 -->
+        <router-view/>
+        <!-- 푸터 -->
+        <Footer></Footer>
     </div>
 </template>
 
 <script>
     import Header from './components/layouts/Header'
+    import Footer from './components/layouts/Footer'
 
     export default {
         name: 'app',
         components: {
-            Header
+            Header,
+            Footer
         }
     }
 </script>

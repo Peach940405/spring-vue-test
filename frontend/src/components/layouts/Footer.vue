@@ -1,12 +1,12 @@
 <template>
     <div>
-        <span>이거는 헤더~</span>
+        <span>이거는 푸터~</span>
     </div>
 </template>
 
 <script>
     export default {
-        name: "Header"
+        name: "Footer"
     }
 </script>
 
