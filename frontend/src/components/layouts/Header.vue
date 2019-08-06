@@ -1,12 +1,12 @@
 <template>
     <div>
-        <span>여기는 홈페이지</span>
+        <span>hoho</span>
     </div>
 </template>
 
 <script>
     export default {
-        name: "HomePage"
+        name: "Header"
     }
 </script>
 
