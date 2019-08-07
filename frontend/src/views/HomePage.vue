@@ -1,8 +1,15 @@
 <template>
     <div>
         <span>여기는 홈페이지</span>
-        <button @click="getAllUsers">Call Spring Boot</button>
-        <h4>result: {{result}}</h4>
+        <v-flex v-for="user in getUsers" :key="user">
+            <span>아이디: {{user.id}}</span>
+            <br>
+            <span>비밀번호: {{user.password}}</span>
+            <br>
+            <span>이름: {{user.name}}</span>
+            <br>
+        </v-flex>
+        <span>위는 유저들</span>
     </div>
 </template>
 
@@ -17,17 +24,13 @@
                 result: []
             }
         },
-        methods: {
-            getAllUsers: function () {
-                MainRepository.getAllUsers()
-                    .then(response => {
-                        let userLIst = response.data;
-                        for (let index in response.data) {
-                            console.log(userLIst[index])
-                        }
-                    }).catch(error => {
-                        console.log(error);
-                });
+
+        mounted() {
+            MainRepository.setUsers();
+        },
+        computed: {
+            getUsers: function () {
+                return MainRepository.getUsers();
             }
         },
     }

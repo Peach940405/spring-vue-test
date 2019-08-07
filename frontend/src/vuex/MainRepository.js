@@ -1,18 +1,13 @@
-import API from '../services/Api'
-// import MySQLService from '../services/MySQLService'
-// import store from './store'
+import MySQLService from '../services/MySQLService'
+import store from './store'
 // import router from '../routers/router'
 
-import axios from 'axios'
-const AXIOS = axios.create({
-    baseURL: `/api`,
-    timeout: 1000
-});
-
 export default {
-    getAllUsers: function () {
-        console.log("main에 왓다");
-        return AXIOS.get('/users');
+    // 회원
+    setUsers: async function () {
+        store.dispatch('setUsers', await MySQLService.getUsers());
+    },
+    getUsers: function () {
+        return store.getters.getUsers;
     }
 }
-
