@@ -1,9 +1,5 @@
-package com.choi.test;
+package com.choi;
 
-import org.mybatis.spring.annotation.MapperScan;
-
-import com.choi.model.service.CityService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
